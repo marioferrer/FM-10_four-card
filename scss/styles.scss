@@ -1,0 +1,149 @@
+@use "reset";
+@import "mixins";
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --dark-blue: hsl(234, 12%, 34%);
+  --gray: hsl(229, 6%, 66%);
+  --white: hsl(0, 0%, 98%);
+
+  --font-size: 15px;
+  --ff: 'Poppins', sans-serif;
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  font-size: var(--font-size);
+}
+
+body {
+  background: var(--white);
+  font-family: var(--ff);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--dark-blue);
+  }
+}
+
+.container {
+  min-width: 300px;
+  width: 375px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  background: var(--white);
+
+  @include media {
+    width: auto;
+    max-width: 1440px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: hsl(234, 12%, 34%);
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  @include media {
+    padding: 0 29rem;
+  }
+
+  &__h1 {
+    font-size: 1.6rem;
+    font-weight: var(--fw-200);
+    color: var(--dark-blue);
+    margin-bottom: 1.5rem;
+
+    @include media {
+      font-size: 2.5rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--white);
+    }
+  }
+
+  &__h1 strong {
+    font-size: 1.6rem;
+    font-weight: var(--fw-600);
+    color: var(--dark-blue);
+
+    @include media {
+      font-size: 2.5rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--white);
+    }
+  }
+
+  &__p {
+    font-weight: 200;
+    color: var(--gray);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--white);
+    }
+  }
+}
+
+.cards {
+  @include media {
+    @include flex (row, nowrap, center, center, 3rem);
+  }
+}
+
+.border-cyan {
+  border-top: 4px solid var(--cyan);
+}
+
+.border-red {
+  border-top: 4px solid var(--red);
+}
+
+.border-orange {
+  border-top: 4px solid var(--orange);
+}
+
+.border-blue {
+  border-top: 4px solid var(--blue);
+}
+
+.card {
+  box-shadow: 0 10px 25px var(--gray);
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: 1.6rem;
+  margin-bottom: 1.5rem;
+  width: auto;
+  @include flex (column, nowrap, space-between, flex-start, 0);
+
+  @include media {
+    width: 375px;
+    height: 250px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: var(--fw-600);
+    color: var(--dark-blue);
+    margin-bottom: .5rem;
+  }
+
+  &__p {
+    font-size: .9rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    width: 3.5rem;
+    align-self: flex-end;
+  }
+}

@@ -47,9 +47,9 @@ Mobile
 ### Links
 
  
-👉 Solution Frontend Mentor: [Frontend solution]()
+👉 Solution Frontend Mentor: [Frontend solution](https://www.frontendmentor.io/solutions/four-card-e_NnTSp22u)
 
-👉 Live Site: [Live site with GitHub Pages]()
+👉 Live Site: [Live site with GitHub Pages](https://marioferrer.github.io/FM-10_four-card/)
 
 <br>
 
